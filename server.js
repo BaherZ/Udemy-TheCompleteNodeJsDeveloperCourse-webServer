@@ -21,14 +21,19 @@ app.use((req,res,next)=>{
 	})
 	next();
 });
-app.use((req,res,next)=>{
+/*app.use((req,res,next)=>{
 	res.render('maintainence.hbs');
-})
+	next();
+})*/
 app.use(express.static(__dirname+'/public'));
 
 
 app.get('/',(req,res)=>{
 	res.render('home.hbs',{pageTitle:'Home Page',welcomeMessage:'Welcome to my WebSite'});
+});
+
+app.get('/doc',(req,res)=>{
+	res.render('doc.hbs',{pageTitle:'documentation Page',welcomeMessage:'Welcome to documentation'});
 });
 
 app.get('/about',(req,res)=>{
